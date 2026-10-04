@@ -1,0 +1,179 @@
+<title>BLKSHP Look Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700;900&family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;800;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  /* Layout: a stack of full-width hero mockups, one per direction, each self-coloured. */
+  :root {
+    --page: #e9e6e1; --ink: #1a1a1a; --sub: #5d5a55;
+    --sans: 'Inter Tight', system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --page: #1b1a19; --ink: #efece6; --sub: #a29d95; color-scheme: dark } }
+  :root[data-theme="dark"] { --page: #1b1a19; --ink: #efece6; --sub: #a29d95; color-scheme: dark }
+  body { background: var(--page); color: var(--ink); font: 15px/1.6 var(--sans); padding-inline: 16px; padding-block: 32px 64px; }
+  .wrap { max-width: 1080px; margin: 0 auto; display: grid; gap: 40px; }
+  header h1 { font-size: 28px; margin: 0; letter-spacing: -0.5px; }
+  header p { color: var(--sub); margin: 6px 0 0; max-width: 62ch; }
+  .label { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+  .label h2 { font-size: 18px; margin: 0; }
+  .label span { font: 12px var(--mono); color: var(--sub); }
+  .swatches { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .swatches i { display: inline-flex; align-items: center; gap: 6px; font: 11px var(--mono); color: var(--sub); font-style: normal; }
+  .swatches b { width: 14px; height: 14px; border-radius: 3px; border: 1px solid rgba(128,128,128,.4); }
+
+  .mock { border-radius: 12px; overflow: hidden; box-shadow: 0 20px 50px -25px rgba(0,0,0,.45); }
+  .bar { display: flex; justify-content: space-between; align-items: center; padding: 16px 28px; gap: 16px; }
+  .bar nav { display: flex; gap: 22px; font-size: 13px; }
+  .hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: 32px; padding: 48px 28px 56px; align-items: center; }
+  .hero > * { min-width: 0; }
+  .hero h3 { margin: 0; text-wrap: balance; }
+  .hero p { margin: 18px 0 0; max-width: 46ch; }
+  .cta { display: flex; gap: 10px; margin-top: 26px; flex-wrap: wrap; }
+  .cta a { padding: 11px 18px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .shot { width: 100%; aspect-ratio: 16/10; max-width: 100%; display: grid; grid-template-rows: auto 1fr; overflow: hidden; }
+  .shot .chrome { height: 22px; display: flex; gap: 5px; align-items: center; padding: 0 10px; }
+  .shot .chrome i { width: 7px; height: 7px; border-radius: 50%; background: currentColor; opacity: .35; }
+  .shot .body { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 12px; align-content: start; }
+  .shot .tile { height: 44px; border-radius: 6px; }
+  .shot .wide { grid-column: span 3; height: 120px; border-radius: 6px; }
+  .shot .side { height: 120px; border-radius: 6px; }
+
+  /* A. Black Wool */
+  .a { background: #141210; color: #ECE5D8; }
+  .a .bar { border-bottom: 1px solid #2a2622; }
+  .a .logo { font: 400 22px 'Anton', sans-serif; letter-spacing: 3px; }
+  .a nav a { color: #8A8275; }
+  .a h3 { font: 400 clamp(46px, 7vw, 84px)/0.95 'Anton', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+  .a h3 em { font-style: normal; color: #C9A45C; }
+  .a p { color: #A69E90; font-family: 'Archivo', sans-serif; }
+  .a .cta a:first-child { background: #C9A45C; color: #141210; }
+  .a .cta a:last-child { border: 1px solid #3a352f; color: #ECE5D8; }
+  .a .shot { background: #1d1a17; border: 1px solid #2f2a25; color: #ECE5D8; }
+  .a .tile, .a .side, .a .wide { background: #26221e; }
+  .a .tile:first-child { background: #C9A45C; opacity: .85; }
+
+  /* B. Bone & Ink */
+  .b { background: #F1ECE3; color: #111; }
+  .b .bar { border-bottom: 2px solid #111; }
+  .b .logo { font: 900 20px 'Archivo', sans-serif; letter-spacing: 1px; }
+  .b nav a { color: #111; }
+  .b h3 { font: 900 clamp(44px, 6.6vw, 80px)/0.98 'Archivo', sans-serif; letter-spacing: -2.5px; }
+  .b h3 em { font-style: normal; color: #7A1F1F; }
+  .b p { color: #4f4a43; font-family: 'Archivo', sans-serif; }
+  .b .cta a:first-child { background: #111; color: #F1ECE3; }
+  .b .cta a:last-child { border: 2px solid #111; color: #111; }
+  .b .shot { background: #fff; border: 2px solid #111; color: #111; }
+  .b .chrome { border-bottom: 2px solid #111; }
+  .b .tile, .b .side, .b .wide { background: #e8e2d6; }
+  .b .tile:first-child { background: #7A1F1F; }
+
+  /* C. Night Pasture */
+  .c { background: #0F1613; color: #E8E4D6; }
+  .c .bar { border-bottom: 1px solid #1f2b25; }
+  .c .logo { font: 700 21px 'Fraunces', serif; letter-spacing: 2px; }
+  .c nav a { color: #7D8A80; }
+  .c h3 { font: 500 clamp(42px, 6vw, 72px)/1.02 'Fraunces', serif; letter-spacing: -1px; }
+  .c h3 em { color: #D9B26A; }
+  .c p { color: #A3AD9F; font-family: 'Nunito Sans', sans-serif; }
+  .c .cta a { border-radius: 999px; }
+  .c .cta a:first-child { background: #9DB38A; color: #0F1613; }
+  .c .cta a:last-child { border: 1px solid #2c3a33; color: #E8E4D6; }
+  .c .shot { background: #15201b; border: 1px solid #24322b; border-radius: 14px; color: #E8E4D6; }
+  .c .tile, .c .side, .c .wide { background: #1d2a24; border-radius: 10px; }
+  .c .tile:first-child { background: #9DB38A; opacity: .8; }
+
+  /* D. Pure Monochrome */
+  .d { background: #0A0A0A; color: #FAFAFA; }
+  .d .bar { border-bottom: 1px solid #FAFAFA; }
+  .d .logo { font: 800 19px 'Inter Tight', sans-serif; letter-spacing: 4px; }
+  .d nav a { color: #FAFAFA; text-transform: uppercase; font: 500 11px var(--mono); letter-spacing: 1.5px; }
+  .d h3 { font: 900 clamp(44px, 6.6vw, 82px)/0.92 'Inter Tight', sans-serif; text-transform: uppercase; letter-spacing: -2px; }
+  .d p { color: #8C8C8C; }
+  .d .cta a { text-transform: uppercase; font: 500 12px var(--mono); letter-spacing: 1.5px; }
+  .d .cta a:first-child { background: #FAFAFA; color: #0A0A0A; }
+  .d .cta a:last-child { border: 1px solid #FAFAFA; color: #FAFAFA; }
+  .d .shot { background: #0A0A0A; border: 1px solid #FAFAFA; color: #FAFAFA; }
+  .d .chrome { border-bottom: 1px solid #333; }
+  .d .tile, .d .side, .d .wide { background: #1a1a1a; border-radius: 0; }
+
+  .mock a { color: inherit; }
+  .bar nav a { text-decoration: none; }
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; padding: 32px 20px 40px; }
+    .bar { padding: 14px 20px; }
+    .bar nav { display: none; }
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Pick a look for BLKSHP</h1>
+    <p>The top of your real homepage in four directions. Same words and layout; only the colors and type change. The grey box stands in for the Stryde screenshot.</p>
+  </header>
+
+  <section>
+    <div class="label"><h2>A · Black Wool</h2><span>crafted · premium · workshop</span></div>
+    <div class="mock a">
+      <div class="bar"><span class="logo">BLKSHP</span><nav><a href="#">Our Work</a><a href="#">Services</a><a href="#">About</a></nav></div>
+      <div class="hero">
+        <div>
+          <h3>We build apps that <em>ship.</em></h3>
+          <p>Black Sheep is an independent software studio building custom web and mobile apps. We design, build and launch our own products, and we can do the same for yours.</p>
+          <div class="cta"><a href="#">Start a project</a><a href="#">See our work</a></div>
+        </div>
+        <div class="shot"><div class="chrome"><i></i><i></i><i></i></div><div class="body"><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="wide"></div><div class="side"></div></div></div>
+      </div>
+    </div>
+    <div class="swatches"><i><b style="background:#141210"></b>wool black</i><i><b style="background:#ECE5D8"></b>bone</i><i><b style="background:#C9A45C"></b>brass</i><i><b style="background:#8A8275"></b>felt</i></div>
+  </section>
+
+  <section>
+    <div class="label"><h2>B · Bone &amp; Ink</h2><span>editorial · bold · stands out</span></div>
+    <div class="mock b">
+      <div class="bar"><span class="logo">BLKSHP</span><nav><a href="#">Our Work</a><a href="#">Services</a><a href="#">About</a></nav></div>
+      <div class="hero">
+        <div>
+          <h3>We build apps that <em>ship.</em></h3>
+          <p>Black Sheep is an independent software studio building custom web and mobile apps. We design, build and launch our own products, and we can do the same for yours.</p>
+          <div class="cta"><a href="#">Start a project</a><a href="#">See our work</a></div>
+        </div>
+        <div class="shot"><div class="chrome"><i></i><i></i><i></i></div><div class="body"><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="wide"></div><div class="side"></div></div></div>
+      </div>
+    </div>
+    <div class="swatches"><i><b style="background:#F1ECE3"></b>bone paper</i><i><b style="background:#111111"></b>ink</i><i><b style="background:#7A1F1F"></b>oxblood</i><i><b style="background:#6B655C"></b>graphite</i></div>
+  </section>
+
+  <section>
+    <div class="label"><h2>C · Night Pasture</h2><span>earthy · calm · unusual</span></div>
+    <div class="mock c">
+      <div class="bar"><span class="logo">BLKSHP</span><nav><a href="#">Our Work</a><a href="#">Services</a><a href="#">About</a></nav></div>
+      <div class="hero">
+        <div>
+          <h3>We build apps that <em>ship.</em></h3>
+          <p>Black Sheep is an independent software studio building custom web and mobile apps. We design, build and launch our own products, and we can do the same for yours.</p>
+          <div class="cta"><a href="#">Start a project</a><a href="#">See our work</a></div>
+        </div>
+        <div class="shot"><div class="chrome"><i></i><i></i><i></i></div><div class="body"><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="wide"></div><div class="side"></div></div></div>
+      </div>
+    </div>
+    <div class="swatches"><i><b style="background:#0F1613"></b>night field</i><i><b style="background:#E8E4D6"></b>cream wool</i><i><b style="background:#9DB38A"></b>sage</i><i><b style="background:#D9B26A"></b>lantern</i></div>
+  </section>
+
+  <section>
+    <div class="label"><h2>D · Pure Monochrome</h2><span>stark · confident · screenshots carry the color</span></div>
+    <div class="mock d">
+      <div class="bar"><span class="logo">BLKSHP</span><nav><a href="#">Our Work</a><a href="#">Services</a><a href="#">About</a></nav></div>
+      <div class="hero">
+        <div>
+          <h3>We build apps that ship.</h3>
+          <p>Black Sheep is an independent software studio building custom web and mobile apps. We design, build and launch our own products, and we can do the same for yours.</p>
+          <div class="cta"><a href="#">Start a project</a><a href="#">See our work</a></div>
+        </div>
+        <div class="shot"><div class="chrome"><i></i><i></i><i></i></div><div class="body"><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="wide"></div><div class="side"></div></div></div>
+      </div>
+    </div>
+    <div class="swatches"><i><b style="background:#0A0A0A"></b>black</i><i><b style="background:#FAFAFA"></b>white</i><i><b style="background:#8C8C8C"></b>grey</i></div>
+  </section>
+</div>
