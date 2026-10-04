@@ -66,7 +66,6 @@ function Hero() {
   return (
     <section className="hero" id="top">
       <div className="hero-glow" aria-hidden />
-      <p className="mono kicker">&gt; independent software studio</p>
       <h1>{company.headline}</h1>
       <p className="typed">
         {typed}<span className="caret" aria-hidden>_</span>
