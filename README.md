@@ -15,4 +15,4 @@ npm run dev
 
 Pushing to `main` builds the site and publishes it to GitHub Pages via `.github/workflows/deploy.yml`. The custom domain is set in `public/CNAME`.
 
-© Black Sheep Development Solutions LLC
+© Black Sheep

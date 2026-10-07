@@ -304,7 +304,7 @@ export default function App() {
         <Contact />
       </main>
       <footer className="mono">
-        © {YEAR} {company.legalName}
+        © {YEAR} {company.name}
       </footer>
     </>
   )

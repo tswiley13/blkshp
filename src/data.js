@@ -2,7 +2,6 @@
 
 export const company = {
   name: 'Black Sheep',
-  legalName: 'Black Sheep Development Solutions LLC',
   headline: 'We build apps that ship.',
   platforms: 'web · iOS · android · macOS',
   pitch:
